@@ -1,0 +1,140 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SHOP</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarColor02"
+      aria-controls="navbarColor02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon">bonjour</span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['connexion']" [routerLinkActive]="['active']">
+            Connexion
+          </a>
+        </li>
+        <li *ngIf = "identifient != '' " class="nav-item item-profil">
+          <a 
+            class="nav-link"  
+            [routerLink]="['profil']" 
+            [routerLinkActive]="['active']"
+          >
+              Bienvenue {{identifient}}
+          </a>
+        </li>
+
+        <li *ngIf = "identifient == '' " class="nav-item item-profil">
+          <a 
+            class="nav-link"  
+            [routerLink]="['connexion']" 
+            [routerLinkActive]="['active']"
+          >
+              Se connexter 
+          </a>
+        </li>
+        
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Search" />
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+          Recherche
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+   
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+
+        <!-- ////////////////////////   GERANT    ////////////////////////////// -->
+
+        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+          <a class="nav-link " [routerLink]="['epices']" [routerLinkActive]="['active']">
+            Epices
+          </a>
+        </li>
+ 
+        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+          <a class="nav-link" [routerLink]="['legumes']" [routerLinkActive]="['active']">
+            Légumes
+          </a>
+        </li>
+
+        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+          <a class="nav-link" [routerLink]="['produits-geles']" [routerLinkActive]="['active']">
+            Produits Gelés
+          </a>
+        </li>
+
+        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+          <a class="nav-link" [routerLink]="['boisson']" [routerLinkActive]="['active']">
+            Boisson
+          </a>
+        </li>
+
+        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+          <a class="nav-link" [routerLink]="['cereales']" [routerLinkActive]="['active']">
+            Céréales
+          </a>
+        </li>
+
+
+        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+          <a class="nav-link" [routerLink]="['enfants']" [routerLinkActive]="['active']">
+            enfants
+          </a>
+        </li>
+
+        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+          <a class="nav-link" [routerLink]="['beaute']" [routerLinkActive]="['active']">
+            Beauté
+          </a>
+        </li> 
+
+
+        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+          <a class="nav-link" [routerLink]="['bien-etre']" [routerLinkActive]="['active']">
+            Bien être
+          </a>
+        </li>
+
+        <!-- <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+          <a class="nav-link" [routerLink]="['ajouter-retard']" [routerLinkActive]="['active']">
+            Ajouter retard
+          </a>
+        </li> -->
+
+        <li class="nav-item item-profil">
+          <a
+            class="nav-link"
+            [routerLink]="['profil']"
+            [routerLinkActive]="['active']"
+          >
+            Bienvenue {{authenticate.sub}}
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>     
+
+
+
+
+
+<router-outlet></router-outlet>
