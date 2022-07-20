@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { PageAccueilComponent } from './page-accueil/page-accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { PagesComponent } from './pages/pages.component';
+import { PagesModule } from './pages/pages.module';
 
 
 /////////////
@@ -45,7 +46,8 @@ import { PagesComponent } from './pages/pages.component';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    PagesModule,
   
   ////////////////////
 

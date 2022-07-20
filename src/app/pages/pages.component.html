@@ -1,8 +1,8 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar1 navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">SHOP</a>
-    <button
+    <!-- <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
@@ -12,33 +12,27 @@
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon">bonjour</span>
-    </button>
+    </button> -->
 
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
-        
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['connexion']" [routerLinkActive]="['active']">
-            Connexion
-          </a>
-        </li>
         <li *ngIf = "identifient != '' " class="nav-item item-profil">
           <a 
             class="nav-link"  
             [routerLink]="['profil']" 
             [routerLinkActive]="['active']"
           >
-              Bienvenue {{identifient}}
+              Bienvenue {{authenticate.sub}}
           </a>
         </li>
 
-        <li *ngIf = "identifient == '' " class="nav-item item-profil">
+        <li  class="nav-item item-profil">
           <a 
             class="nav-link"  
             [routerLink]="['connexion']" 
             [routerLinkActive]="['active']"
           >
-              Se connexter 
+              Se connecter 
           </a>
         </li>
         
@@ -53,60 +47,60 @@
   </div>
 </nav>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+<nav class="navbar2 navbar-expand-lg navbar-dark bg-dark ">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"></a>
    
     <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto"  style="list-style-type:none;">
 
         <!-- ////////////////////////   GERANT    ////////////////////////////// -->
 
-        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+        <li class="nav-item toto ml-4" >
           <a class="nav-link " [routerLink]="['epices']" [routerLinkActive]="['active']">
             Epices
           </a>
         </li>
  
-        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+        <li class="nav-item toto" >
           <a class="nav-link" [routerLink]="['legumes']" [routerLinkActive]="['active']">
             Légumes
           </a>
         </li>
 
-        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+        <li class="nav-item toto">
           <a class="nav-link" [routerLink]="['produits-geles']" [routerLinkActive]="['active']">
             Produits Gelés
           </a>
         </li>
 
-        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
-          <a class="nav-link" [routerLink]="['boisson']" [routerLinkActive]="['active']">
+        <li class="nav-item toto">
+          <a class="nav-link" [routerLink]="['boissons']" [routerLinkActive]="['active']">
             Boisson
           </a>
         </li>
 
-        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+        <li class="nav-item toto">
           <a class="nav-link" [routerLink]="['cereales']" [routerLinkActive]="['active']">
             Céréales
           </a>
         </li>
 
 
-        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+        <li class="nav-item toto">
           <a class="nav-link" [routerLink]="['enfants']" [routerLinkActive]="['active']">
             enfants
           </a>
         </li>
 
-        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+        <li class="nav-item toto" >
           <a class="nav-link" [routerLink]="['beaute']" [routerLinkActive]="['active']">
             Beauté
           </a>
         </li> 
 
 
-        <li class="nav-item" *ngIf="hasRole('ROLE_CLIENT')">
+        <li class="nav-item toto" >
           <a class="nav-link" [routerLink]="['bien-etre']" [routerLinkActive]="['active']">
             Bien être
           </a>
@@ -118,23 +112,10 @@
           </a>
         </li> -->
 
-        <li class="nav-item item-profil">
-          <a
-            class="nav-link"
-            [routerLink]="['profil']"
-            [routerLinkActive]="['active']"
-          >
-            Bienvenue {{authenticate.sub}}
-          </a>
-        </li>
-
+        
       </ul>
     </div>
   </div>
 </nav>     
-
-
-
-
 
 <router-outlet></router-outlet>

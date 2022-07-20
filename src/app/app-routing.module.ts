@@ -5,7 +5,6 @@ import { AuthGuard } from './guards/auth.gard';
 import { PageAccueilComponent } from './page-accueil/page-accueil.component';
 
 const routes: Routes = [
-  {path: '', component:PageAccueilComponent},
   {path: 'accueil', component:PageAccueilComponent},
   { path: '',  loadChildren: () => import('./pages/pages.module').then( m => m.PagesModule) },
   { path: 'connexion', component:ConnexionComponent},
